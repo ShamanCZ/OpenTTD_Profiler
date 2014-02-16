@@ -191,10 +191,10 @@ class ProfilerUI:
     def _ask_name(self):
         while True:
             answer = raw_input("Please type a name (leave empty to cancel): ")
-            if re.match("[^/\:]", answer) is not None:
+            if re.match("[^/\:]", answer) is not None or answer is "": 
                 return answer
             else:
-                self._message("Wrong name. Please use just letters and numbers with no spaces. Please try again!")
+                self._message("Please avoid using \\, / and :")
 
     """
     Give me a list of options and I will ask user what option he wants.
